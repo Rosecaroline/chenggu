@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no">
 <title>Examples</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -40,7 +41,7 @@
     <script type="text/javascript">
     	window.onload = function(){
     		var Wrap = document.querySelector("#wrap");
-	    	var Height = window.screen.height;
+	    	var Height = document.documentElement?document.documentElement.clientHeight:document.body.clientHeight;
 	    	Wrap.style.height = Height + "px";
     	}
     </script>

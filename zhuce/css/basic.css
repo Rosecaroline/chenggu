@@ -11,7 +11,10 @@ h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
 body{ font-family:"微软雅黑"; font-size:14px; color:#666666; line-height:24px;}
 .clearfix:after { visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;} 
 .clearfix { zoom:1;}
-
+input{
+	outline: none;
+	-webkit-appearance: none;
+}
 
 /****最小宽度****/
 /*@media(max-width:449px){

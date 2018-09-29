@@ -6,20 +6,38 @@
  * @version $Id$
  */
 /*头部*/
-input::-webkit-input-placeholder{
-	color: #fff;
+input::input-placeholder {
+    color: #ffffff;
 }
-input:-moz-placeholder{
-	color: #fff;
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    　　color: #fff;
 }
-input::-moz-placeholder{
-	color: #fff;
+input:-moz-placeholder, textarea:-moz-placeholder {
+    　　color: #fff;
 }
-input:-ms-input-placeholder{
-	color: #fff;
+input::-moz-placeholder, textarea::-moz-placeholder {
+    　　color: #fff;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    　　color: #ffffff;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #ffffff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ffffff;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ffffff;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #ffffff;
+}
+::-webkit-input-placeholder {
+    color: #ffffff;
 }
 #wrap{
-	max-width: 750px;
+	max-width: 640px;
 	margin:0 auto;
 	background: rgb(242, 72, 56);
 }
@@ -29,7 +47,7 @@ input:-ms-input-placeholder{
 }
 .main{
 	background: rgb(242, 72, 56);
-	padding-bottom: 50px;
+	margin-top: 40px;
 }
 .mian-ul li{
 	width: 70%;
@@ -38,7 +56,6 @@ input:-ms-input-placeholder{
 	padding-top: 25px;
 	padding-bottom: 5px;
 	height: 30px;
-	padding-left: 10px;
 }
 .mian-ul li .sign-input{
 	border: none;
@@ -58,9 +75,10 @@ input:-ms-input-placeholder{
 	display: block;
 	width: 24px;
 	float: left;
+	margin-left: 10px;
 }
 .mian-ul li .code-input{
-	width: 50%;
+	width: 45%;
 }
 #code-btn{
     border: none;
@@ -75,7 +93,7 @@ input:-ms-input-placeholder{
 }
 .popbtn{
 	width: 70%;	
-	margin: 20px auto;
+	margin: 40px auto;
 	height: 45px;
 	background-color: #fff;
 	border-radius: 22px;
@@ -84,6 +102,7 @@ input:-ms-input-placeholder{
 	font-size: 17px;
 	font-weight: bold;
 	display: block;
+	cursor: pointer;
 }
 @media(max-width: 530px){
 	.mian-ul li{
@@ -95,7 +114,7 @@ input:-ms-input-placeholder{
 	.mian-ul li .sign-input{
 		line-height: 20px;
 		font-size: 15px;
-		padding-left: 30px;
+		padding-left: 20px;
 	}
 	#code-btn{
 		font-size: 14px;
@@ -116,11 +135,11 @@ input:-ms-input-placeholder{
 		padding-left: 8px;
 		font-size: 14px;
 	}
-	.mian-ul li{
-		padding-left: 3px;
-	}
 	#code-btn{
 		width: 35%;
 		font-size: 12px;
+	}
+	.mian-ul li span{
+		margin-left: 0px;
 	}
 }
