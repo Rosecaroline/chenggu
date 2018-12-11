@@ -206,25 +206,31 @@
 
 	<script type="text/javascript">
 		function bodyScale() {
-			var devicewidth = document.documentElement.clientWidth || document.body.clientWidth;
-
+    		var devicewidth = document.documentElement.clientWidth;
  			var scale = devicewidth / 750;
-			var supermarketBox = document.querySelector(".supermarket-box");
+			document.body.style.zoom = scale;
+			// var devicewidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+ 		// 	var scale = devicewidth / 750;
+			// var supermarketBox = document.querySelector(".supermarket-box");
 			
 
-			if( scale > 1){
-				scale = 1;
-			}
+			// if( scale > 1){
+			// 	scale = 1;
+			// }
+			// if (navigator.userAgent.indexOf('Firefox') >= 0){
+			// 	document.body.style.transform = 'scale(' + scale + ')';
+			// 	document.body.style.transformOrigin= 'left top';
+			// }else{
+			// 	document.body.style.zoom = scale;
+			// }
+			// var Zheight = parseFloat(getComputedStyle(supermarketBox).height) * scale;
+			// console.log(parseFloat(getComputedStyle(supermarketBox).height) * scale);
+			// document.body.style.height = Zheight + "px";
+
 			//原生解决方法
-			if (navigator.userAgent.indexOf('Firefox') >= 0){
-				document.body.style.transform = 'scale(' + scale + ')';
-				document.body.style.transformOrigin= 'left top';
-			}else{
-				document.body.style.zoom = scale;
-			}
-			var Zheight = parseFloat(getComputedStyle(supermarketBox).height) * scale;
-			console.log(parseFloat(getComputedStyle(supermarketBox).height) * scale);
-			document.body.style.height = Zheight + "px";
+			// document.body.style.transform = 'scale(' + scale + ')';
+			// document.body.style.transformOrigin= 'left top';
 		}
 		window.onload = window.onresize = function () {
 	     	bodyScale();
