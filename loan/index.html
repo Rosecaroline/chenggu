@@ -4,17 +4,21 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
 	<div class="supermarket-box">
 		<!-- 极速匹配 -->
-		<div class="public-item">
+		<div class="public-item speedMatchList">
 			<div class="public-title">
 				<img src="img/icon_01.png" alt="">
 				<h2>极速匹配</h2>
 			</div>
-			<ul class="match-list">
-				<li class="clearfix">
+			<ul class="match-list" id="speedMatchList">
+				<!--<li class="clearfix">
 					<div class="fl match-left">
 						<img src="img/logo.png" alt="">
 						<div class="match-item-info">
@@ -43,17 +47,17 @@
 						</div>
 					</div>
 					<a href="##" class="apply fr">立即申请</a>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 		<!-- 超高通过率 -->
-		<div class="public-item">
+		<div class="public-item highPassList">
 			<div class="public-title">
 				<img src="img/icon_02.png" alt="">
 				<h2>超高通过率</h2>
 			</div>
-			<ul class="pass-list">
-				<li class="clearfix">
+			<ul class="pass-list" id="highPassList">
+				<!--<li class="clearfix">
 					<div class="pass-half">
 						<img src="img/logo_01.png" alt="">
 						<div class="pass-item-info">
@@ -88,16 +92,16 @@
 							<p>运营商认证</p>
 						</div>
 					</div>
-				</li>
+				</li>-->
 			</ul>
 		</div>
-		<div class="public-item">
+		<div class="public-item onlyIdcardList">
 			<div class="public-title">
 				<img src="img/icon_03.png" alt="">
 				<h2>只需身份证</h2>
 			</div>
-			<ul class="pass-list">
-				<li class="clearfix">
+			<ul class="pass-list" id="onlyIdcardList">
+				<!--<li class="clearfix">
 					<div class="pass-half">
 						<img src="img/logo_01.png" alt="">
 						<div class="pass-item-info">
@@ -132,17 +136,17 @@
 							<p>运营商认证</p>
 						</div>
 					</div>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 		<!-- 不查征信 -->
-		<div class="public-item">
+		<div class="public-item noInvestigationCreditList">
 			<div class="public-title">
 				<img src="img/icon_04.png" alt="">
 				<h2>不查征信</h2>
 			</div>
-			<ul class="pass-list">
-				<li class="clearfix">
+			<ul class="pass-list" id="noInvestigationCreditList">
+				<!--<li class="clearfix">
 					<div class="pass-half">
 						<img src="img/logo_01.png" alt="">
 						<div class="pass-item-info">
@@ -177,7 +181,7 @@
 							<p>运营商认证</p>
 						</div>
 					</div>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 		<!-- 最新口子 -->
@@ -186,8 +190,8 @@
 				<img src="img/icon_05.png" alt="">
 				<h2>最新口子</h2>
 			</div>
-			<ul class="latest-list">
-				<li class="clearfix">
+			<ul class="latest-list" id="newTabList">
+				<!--<li class="clearfix">
 					<div class="fl latest-left">
 						<img src="img/logo.png" alt="">
 						<span>有米好借</span>
@@ -196,7 +200,7 @@
 						<a href="##" title="">立即申请</a>
 						<img src="img/arrow.png" alt="">
 					</div>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 		<div class="last">
@@ -204,33 +208,32 @@
 		</div>
 	</div>
 
+
+
 	<script type="text/javascript">
 		function bodyScale() {
-    		var devicewidth = document.documentElement.clientWidth;
- 			var scale = devicewidth / 750;
-			document.body.style.zoom = scale;
-			// var devicewidth = document.documentElement.clientWidth || document.body.clientWidth;
-
+   //  		var devicewidth = document.documentElement.clientWidth;
  		// 	var scale = devicewidth / 750;
-			// var supermarketBox = document.querySelector(".supermarket-box");
+			// document.body.style.zoom = scale;
+			var devicewidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+ 			var scale = devicewidth / 750;
+			var supermarketBox = document.querySelector(".supermarket-box");
 			
-
-			// if( scale > 1){
-			// 	scale = 1;
-			// }
-			// if (navigator.userAgent.indexOf('Firefox') >= 0){
-			// 	document.body.style.transform = 'scale(' + scale + ')';
-			// 	document.body.style.transformOrigin= 'left top';
-			// }else{
-			// 	document.body.style.zoom = scale;
-			// }
-			// var Zheight = parseFloat(getComputedStyle(supermarketBox).height) * scale;
-			// console.log(parseFloat(getComputedStyle(supermarketBox).height) * scale);
-			// document.body.style.height = Zheight + "px";
-
 			//原生解决方法
-			// document.body.style.transform = 'scale(' + scale + ')';
-			// document.body.style.transformOrigin= 'left top';
+			
+			if (navigator.userAgent.indexOf('Firefox') >= 0){
+				if( scale > 1){
+					scale = 1;
+				}
+				document.body.style.transform = 'scale(' + scale + ')';
+				document.body.style.transformOrigin= 'left top';
+				var Zheight = parseFloat(getComputedStyle(supermarketBox).height) * scale;
+				console.log(parseFloat(getComputedStyle(supermarketBox).height) * scale);
+				document.body.style.height = Zheight + "px";
+			}else{
+				document.body.style.zoom = scale;
+			}
 		}
 		window.onload = window.onresize = function () {
 	     	bodyScale();

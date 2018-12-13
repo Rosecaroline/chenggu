@@ -123,6 +123,12 @@ input{
 	margin-right: 20px;
 	border: 1px solid #eee;
 }
+.pass-item-info{
+	width: 210px;
+}
+.pass-item-info-right{
+	width: 190px;
+}
 .pass-item-info span{
 	font-size: 34px;
 	color: #333;
@@ -130,7 +136,8 @@ input{
 .pass-item-info p{
 	font-size: 24px;
 	color: #999;
-	margin-top: 10px;
+	margin-top: 5px;
+	line-height: 28px;
 }
 .latest-list li{
 	width: 670px;
